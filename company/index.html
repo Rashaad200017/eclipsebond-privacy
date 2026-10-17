@@ -3,45 +3,215 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f6f4ef">
+<meta name="theme-color" content="#f5f1e9">
 <meta name="description" content="Venus Digital LLC is an independent digital product company creating thoughtful, human-centered software experiences.">
-<title>Venus Digital LLC — Independent Digital Product Company</title>
+<title>Venus Digital LLC — Ideas made tangible</title>
 <style>
-:root{color-scheme:light;--paper:#f6f4ef;--white:#fffefa;--ink:#24231f;--muted:#6e6a62;--line:#dedad1;--taupe:#9b8b7a}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7}a{color:inherit}.wrap{width:min(1120px,calc(100% - 48px));margin:auto}
-header{padding:20px 0;border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:block;width:205px;max-width:48vw}.brand img{display:block;width:100%;height:auto}.navlinks{display:flex;gap:28px;color:var(--muted);font-size:.88rem}.navlinks a{text-decoration:none}.navlinks a:hover,.textlink:hover{color:var(--taupe)}
-.hero{padding:100px 0 108px;max-width:900px}.eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;color:#827666;font-weight:650}.hero h1{font-family:"Bodoni MT",Didot,"Times New Roman",serif;font-size:clamp(3.1rem,7.8vw,6.4rem);font-weight:400;letter-spacing:-.045em;line-height:1.02;margin:22px 0 25px;max-width:850px}.hero p{font-size:1.12rem;color:var(--muted);max-width:620px;margin:0 0 30px}.button{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border:1px solid var(--ink);text-decoration:none;font-size:.88rem;transition:background .2s,color .2s}.button:hover{background:var(--ink);color:var(--white)}.textlink{color:#625747;text-underline-offset:4px}
-section{padding:48px 0 72px}.section-head{max-width:680px;margin-bottom:30px}.section-head h2{font-family:"Bodoni MT",Didot,"Times New Roman",serif;font-size:clamp(2rem,4vw,3.1rem);font-weight:400;letter-spacing:-.025em;line-height:1.12;margin:10px 0 14px}.section-head p{color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.card{background:var(--white);border:1px solid var(--line);padding:32px;min-height:280px;display:flex;flex-direction:column;align-items:flex-start}.card-icon{font-family:Georgia,serif;font-size:1.4rem;color:#877764;margin-bottom:20px}.pill{display:inline-block;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#756957;border-bottom:1px solid #cfc5b8;padding-bottom:5px}.card h3{font-family:"Bodoni MT",Didot,"Times New Roman",serif;font-weight:400;font-size:1.8rem;margin:14px 0 8px}.card p{color:var(--muted);margin:0 0 22px}.card .textlink{margin-top:auto;font-size:.9rem}
-.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}.principle{padding:20px 0;border-top:1px solid #cfc9bf}.principle h3{font-family:"Bodoni MT",Didot,"Times New Roman",serif;font-weight:400;font-size:1.35rem;margin:0 0 7px}.principle p{font-size:.92rem;color:var(--muted);margin:0}
-.contact{display:flex;justify-content:space-between;align-items:center;gap:28px;background:#ece8df;padding:34px}.contact h2{font-family:"Bodoni MT",Didot,"Times New Roman",serif;font-weight:400;font-size:2rem;line-height:1.2;margin:0 0 8px}.contact p{color:var(--muted);margin:0}
-footer{border-top:1px solid var(--line);padding:24px 0 34px;color:var(--muted);font-size:.8rem}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footlinks{display:flex;gap:22px}.foot a{text-underline-offset:3px}
-@media(max-width:680px){.wrap{width:calc(100% - 32px)}.nav{align-items:flex-start}.brand{width:155px}.navlinks{gap:13px;font-size:.78rem;padding-top:8px}.hero{padding:72px 0 62px}.cards,.principles{grid-template-columns:1fr}.card{padding:25px;min-height:0}.contact{align-items:flex-start;flex-direction:column;padding:26px}.footlinks{gap:14px}}
+:root{color-scheme:light;--paper:#f5f1e9;--paper-2:#eee8dd;--ink:#24221f;--muted:#716b62;--line:#d8d0c4;--taupe:#968573;--night:#090a12;--lavender:#c9b7f1;--serif:"Bodoni MT",Didot,"Times New Roman",serif;--sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(1240px,calc(100% - 64px));margin-inline:auto}
+.eyebrow{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;font-weight:600}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(245,241,233,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(90,78,64,.14);transition:background .3s,border-color .3s}
+.nav{height:86px;display:flex;align-items:center;justify-content:space-between;gap:24px;transition:height .35s}
+.brand{display:block;width:220px;max-width:45vw;transform-origin:left center;transition:width .35s}
+.brand img{display:block;width:100%;height:auto}
+.navlinks{display:flex;gap:clamp(18px,3vw,38px);font-size:.82rem;color:var(--muted)}
+.navlinks a{text-decoration:none;position:relative}
+.navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:1px;background:currentColor;transition:right .25s}
+.navlinks a:hover:after,.navlinks a:focus-visible:after{right:0}
+.site-header.is-compact .nav{height:64px}
+.site-header.is-compact .brand{width:174px}
+.hero{min-height:calc(100svh - 86px);display:grid;place-items:center;position:relative;overflow:hidden;border-bottom:1px solid var(--line);isolation:isolate}
+.hero:before{content:"";position:absolute;z-index:-1;width:min(75vw,980px);aspect-ratio:1;border-radius:50%;right:-20%;top:-48%;background:radial-gradient(circle at 35% 65%,rgba(255,255,255,.96),rgba(255,255,255,.4) 35%,rgba(218,204,183,.24) 62%,transparent 70%);pointer-events:none}
+.hero:after{content:"";position:absolute;z-index:-1;left:-8%;bottom:-50%;width:70%;height:80%;background:radial-gradient(ellipse,rgba(199,180,151,.18),transparent 68%);pointer-events:none}
+.hero-inner{width:min(1060px,calc(100% - 48px));text-align:center;padding:80px 0 112px;transform:translateY(var(--hero-shift,0px));will-change:transform}
+.hero .eyebrow{color:#827666}
+.hero h1{font-family:var(--serif);font-size:clamp(3.4rem,8vw,7.4rem);font-weight:400;letter-spacing:-.055em;line-height:.99;margin:27px auto 0;max-width:1050px;transform:scale(var(--headline-scale,1));transform-origin:center top;will-change:transform}
+.hero h1 span{display:block}
+.scroll-cue{display:inline-flex;align-items:center;flex-direction:column;gap:12px;margin-top:52px;color:#6d655a;font-size:.59rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none}
+.scroll-cue:before{content:"";height:36px;width:1px;background:#6d655a;transform-origin:top;animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.65);opacity:.5}50%{transform:scaleY(1);opacity:1}}
+.intro{padding:clamp(68px,9vw,132px) 0;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.intro-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(36px,8vw,120px);align-items:start}
+.section-index{display:flex;align-items:center;gap:16px;color:#776b5d;font-size:.7rem;letter-spacing:.16em}
+.section-index:after{content:"";height:1px;width:44px;background:#a99b89}
+.intro-kicker{margin-top:28px;max-width:230px;font-size:.67rem;letter-spacing:.23em;line-height:2;text-transform:uppercase}
+.intro-copy{max-width:680px}
+.intro-copy p{font-family:var(--serif);font-size:clamp(1.65rem,3.2vw,2.8rem);line-height:1.23;letter-spacing:-.025em;margin:0 0 24px}
+.intro-copy .subcopy{font-family:var(--sans);font-size:.96rem;line-height:1.8;letter-spacing:0;color:var(--muted);max-width:520px;margin-bottom:25px}
+.inline-link{display:inline-flex;gap:14px;align-items:center;font-size:.82rem;text-decoration:none;border-bottom:1px solid #a99b89;padding-bottom:6px}
+.inline-link span{transition:transform .25s}.inline-link:hover span{transform:translateX(4px)}
+.product{background:var(--night);color:#f6f1eb;position:relative;overflow:hidden;padding:clamp(68px,9vw,118px) 0}
+.product:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 76% 43%,rgba(104,73,155,.28),transparent 38%),radial-gradient(ellipse at 82% 90%,rgba(70,54,96,.22),transparent 38%),linear-gradient(125deg,#090a12,#11101b 65%,#090a12);pointer-events:none}
+.product:after{content:"";position:absolute;right:-10%;top:-40%;width:55vw;aspect-ratio:1;border-radius:50%;border:1px solid rgba(213,195,248,.13);box-shadow:0 0 100px rgba(130,94,190,.09),inset 0 0 100px rgba(130,94,190,.05);pointer-events:none}
+.product-grid{position:relative;z-index:1;display:grid;grid-template-columns:.78fr 1.22fr;gap:clamp(36px,7vw,100px);align-items:center}
+.product .section-index{color:#b6a6d3}
+.product-copy .eyebrow{color:#b9a9d8;margin-top:34px}
+.product h2{font-family:var(--serif);font-size:clamp(3.4rem,7vw,6.5rem);font-weight:400;letter-spacing:-.06em;line-height:.95;margin:15px 0 14px;color:#d6c3f5}
+.product .tagline{font-family:var(--serif);font-size:clamp(1.3rem,2.5vw,2rem);color:#e9e1f7;margin:0 0 22px}
+.product .description{font-size:.94rem;color:#c2bdcb;max-width:420px;margin:0 0 30px}
+.product-link{display:inline-flex;align-items:center;gap:12px;padding:11px 17px;border:1px solid #9d88c5;border-radius:999px;text-decoration:none;font-size:.82rem;transition:background .25s,color .25s}
+.product-link:hover{background:#e4d6ff;color:#17121f}
+.phones{display:flex;justify-content:center;align-items:center;gap:clamp(10px,2vw,24px);perspective:1200px;min-width:0}
+.phone{width:min(29%,220px);min-width:0;aspect-ratio: .49;position:relative;border:2px solid #5d5a65;border-radius:32px;padding:6px;background:linear-gradient(145deg,#6b6872,#17171e 26%,#292733 75%,#6e6975);box-shadow:0 28px 70px rgba(0,0,0,.42);transform:translateY(var(--phone-y,0)) rotate(var(--phone-r,0deg));transition:transform .6s cubic-bezier(.2,.75,.2,1);overflow:hidden}
+.phone:nth-child(1){--phone-y:18px;--phone-r:-7deg}
+.phone:nth-child(2){--phone-y:-14px;--phone-r:1deg;z-index:2}
+.phone:nth-child(3){--phone-y:24px;--phone-r:7deg}
+.phone-screen{height:100%;width:100%;border-radius:24px;background:linear-gradient(180deg,#171521,#090a12);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.phone-screen:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(151,116,214,.2),transparent 45%),linear-gradient(160deg,rgba(255,255,255,.05),transparent 42%);pointer-events:none}
+.phone-slot{position:relative;z-index:1;padding:16px 10px;text-align:center;color:#c8bddc;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;line-height:1.6}
+.phone-slot strong{display:block;font-family:var(--serif);font-weight:400;letter-spacing:0;font-size:1.05rem;color:#f0e8ff;text-transform:none;margin-bottom:6px}
+.phone-label{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-size:.54rem;letter-spacing:.12em;color:#a99abf;text-transform:uppercase}
+.product-note{position:relative;z-index:1;color:#a6a0b1;font-size:.72rem;margin:32px 0 0;text-align:center}
+.about{padding:clamp(70px,9vw,120px) 0;background:var(--paper)}
+.about-top{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,7vw,90px);align-items:start;margin-bottom:62px}
+.about h2,.contact h2{font-family:var(--serif);font-weight:400;letter-spacing:-.04em;line-height:1.02;font-size:clamp(2.8rem,5.4vw,5rem);margin:26px 0 0}
+.about-lede{font-family:var(--serif);font-size:clamp(1.35rem,2.3vw,1.9rem);line-height:1.45;margin:50px 0 0}
+.principles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.principle{border-top:1px solid #cfc5b7;padding-top:22px}
+.principle-mark{font-family:var(--serif);font-size:2rem;color:#8b7965;line-height:1}
+.principle h3{font-family:var(--serif);font-size:1.3rem;font-weight:400;margin:18px 0 7px}
+.principle p{color:var(--muted);font-size:.88rem;margin:0;max-width:290px}
+.contact{position:relative;overflow:hidden;background:#0c0d14;color:#f5f0e9;padding:clamp(54px,8vw,100px) 0}
+.contact:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 18% 120%,rgba(143,112,168,.22),transparent 42%),radial-gradient(ellipse at 90% 0%,rgba(112,94,139,.14),transparent 35%);pointer-events:none}
+.contact-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
+.contact .section-index{color:#b7a8cb}
+.contact .eyebrow{color:#c0b1d7;margin-top:30px}
+.contact h2{font-size:clamp(2.8rem,5.2vw,4.8rem);margin-top:15px}
+.contact-copy{color:#c4bfca;max-width:430px;margin:0 0 22px}
+.contact-note{font-size:.8rem;color:#a6a0ad;margin:0}
+footer{background:#0c0d14;color:#a9a3b0;border-top:1px solid rgba(255,255,255,.12);padding:22px 0 30px;font-size:.76rem}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.footer-brand{color:#e4dbe9;letter-spacing:.08em;text-transform:uppercase;font-size:.7rem}
+.footer-links{display:flex;gap:22px}.footer-links a{text-underline-offset:4px}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}
+:focus-visible{outline:2px solid #9278bc;outline-offset:4px}
+@media(max-width:760px){
+ .wrap{width:calc(100% - 36px)}.nav{height:72px}.brand{width:166px}.site-header.is-compact .nav{height:60px}.site-header.is-compact .brand{width:148px}
+ .navlinks{gap:15px;font-size:.74rem}.hero{min-height:calc(88svh - 72px)}.hero-inner{width:calc(100% - 36px);padding:70px 0 86px}.hero h1{font-size:clamp(3.15rem,11vw,5.3rem)}.hero h1 span{display:inline}
+ .scroll-cue{margin-top:40px}.intro-grid,.product-grid,.about-top,.contact-grid{grid-template-columns:1fr}.intro-grid{gap:34px}.intro-kicker{max-width:none;margin-top:18px}.intro-copy p{font-size:2rem}.product-grid{gap:46px}.product-copy{max-width:580px}.phones{width:min(100%,570px);margin-inline:auto;gap:10px}.phone{width:30%;border-radius:24px;padding:5px}.phone-screen{border-radius:18px}.phone-slot{font-size:.45rem;padding:8px 4px}.phone-slot strong{font-size:.82rem}.phone-label{font-size:.43rem;bottom:7px}
+ .about-top{gap:24px;margin-bottom:42px}.about-lede{margin-top:0}.principles{gap:24px}.contact-grid{gap:28px}.contact-copy{margin-top:0}
+}
+@media(max-width:420px){.wrap{width:calc(100% - 28px)}.brand{width:137px}.site-header.is-compact .brand{width:126px}.navlinks{gap:10px;font-size:.69rem}.hero h1{font-size:clamp(2.8rem,10.8vw,3.6rem)}.phone{border-radius:19px;padding:4px}.phone-screen{border-radius:14px}.phone-slot strong{font-size:.72rem}.principles{grid-template-columns:1fr;gap:20px}.principle{display:grid;grid-template-columns:34px 1fr;column-gap:12px}.principle-mark{grid-row:span 2}.principle h3{margin:0 0 5px}.principle p{grid-column:2}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important;transition-delay:0ms!important}
+ .reveal{opacity:1;transform:none}.hero-inner,.hero h1{transform:none!important;will-change:auto}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap nav">
-<a class="brand" href="#top" aria-label="Venus Digital LLC home"><img src="assets/venus-digital-logo.svg" alt="Venus Digital LLC"></a>
-<nav class="navlinks" aria-label="Main navigation"><a href="#work">Our work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-</div></header>
-<main id="top"><div class="wrap">
-<section class="hero">
-<div class="eyebrow">Independent digital product company</div>
-<h1>Distinctive products.<br>Thoughtfully made.</h1>
-<p>Venus Digital creates considered digital experiences shaped around real human needs. Each product has its own purpose, personality, and point of view.</p>
-<a class="button" href="#work">Discover our work <span aria-hidden="true">&nbsp;↗</span></a>
-</section>
-<section id="work">
-<div class="section-head"><div class="eyebrow">Selected work</div><h2>One company. Different possibilities.</h2><p>We believe each product deserves an identity of its own, supported by a shared commitment to thoughtful design and useful technology.</p></div>
-<div class="cards">
-<article class="card"><div class="card-icon" aria-hidden="true">✳</div><span class="pill">Flagship product</span><h3>EclipseBond</h3><p>A relationship app helping couples feel close across any distance through shared memories, calendars, prompts, games, and everyday rituals.</p><a class="textlink" href="https://testflight.apple.com/join/XyhAukU4" target="_blank" rel="noopener noreferrer">Explore the TestFlight beta ↗</a></article>
-<article class="card"><div class="card-icon" aria-hidden="true">＋</div><span class="pill">Looking ahead</span><h3>More to come</h3><p>Our work will continue to evolve across ideas and categories. Future products will be free to find their own voice and visual identity.</p><a class="textlink" href="#about">Our approach ↓</a></article>
-</div>
-</section>
-<section id="about">
-<div class="section-head"><div class="eyebrow">About Venus Digital</div><h2>Independent by nature. Intentional by design.</h2><p>Venus Digital LLC is an independent software company building a growing portfolio of digital products. We value clarity, care, and the details that make an experience feel right.</p></div>
-<div class="principles"><div class="principle"><h3>Human-centered</h3><p>We begin with the people using our products and the moments those products are meant to support.</p></div><div class="principle"><h3>Distinct by design</h3><p>Every product can have its own visual language while benefiting from a thoughtful company-wide standard.</p></div><div class="principle"><h3>Made with care</h3><p>We aim to make digital experiences that are useful, considered, and respectful of people's time and information.</p></div></div>
-</section>
-<section id="contact"><div class="contact"><div><h2>Let's connect.</h2><p>For company, product, or privacy-related questions, contact Venus Digital LLC.</p></div><a class="button" href="tel:+17736568895">Call (773) 656-8895</a></div></section>
-</div></main>
-<footer><div class="wrap foot"><span>© 2026 Venus Digital LLC. All rights reserved.</span><div class="footlinks"><a href="../">EclipseBond Privacy Policy</a><a href="#top">Back to top ↑</a></div></div></footer>
-</body></html>
+<header class="site-header" id="site-header">
+ <div class="wrap nav">
+  <a class="brand" href="#top" aria-label="Venus Digital LLC home"><img src="assets/venus-digital-logo.svg" alt="Venus Digital LLC"></a>
+  <nav class="navlinks" aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+ </div>
+</header>
+<main id="top">
+ <section class="hero" aria-labelledby="hero-title">
+  <div class="hero-inner" id="hero-inner">
+   <div class="eyebrow">Independent digital product company</div>
+   <h1 id="hero-title"><span>Ideas made tangible.</span> <span>Experiences made meaningful.</span></h1>
+   <a class="scroll-cue" href="#intro"><span>Scroll to explore</span></a>
+  </div>
+ </section>
+ <section class="intro" id="intro">
+  <div class="wrap intro-grid">
+   <div class="reveal">
+    <div class="section-index">01</div>
+    <div class="intro-kicker">Distinctive products<br>thoughtfully created.</div>
+   </div>
+   <div class="intro-copy reveal delay-1">
+    <p>A growing portfolio of digital products, each designed to make a meaningful impact on the people who use them.</p>
+    <p class="subcopy">Venus Digital brings ideas into the world with care, clarity, and room for each product to become its own thing.</p>
+    <a class="inline-link" href="#about">Our approach <span aria-hidden="true">→</span></a>
+   </div>
+  </div>
+ </section>
+ <section class="product" id="work" aria-labelledby="product-title">
+  <div class="wrap product-grid">
+   <div class="product-copy reveal">
+    <div class="section-index">02</div>
+    <div class="eyebrow">Featured product</div>
+    <h2 id="product-title">EclipseBond</h2>
+    <p class="tagline">Closer, across any distance.</p>
+    <p class="description">A relationship app designed to help couples feel close, no matter the distance. Shared memories, calendars, games, prompts, and everyday rituals—all in one place.</p>
+    <a class="product-link" href="https://testflight.apple.com/join/XyhAukU4" target="_blank" rel="noopener noreferrer">Discover EclipseBond <span aria-hidden="true">→</span></a>
+   </div>
+   <div class="phones reveal delay-1" aria-label="EclipseBond product screenshot placements">
+    <div class="phone"><div class="phone-screen"><div class="phone-slot"><strong>Home screen</strong>Authentic app screenshot to be added</div><span class="phone-label">01 / Home</span></div></div>
+    <div class="phone"><div class="phone-screen"><div class="phone-slot"><strong>Shared memories</strong>Authentic app screenshot to be added</div><span class="phone-label">02 / Memories</span></div></div>
+    <div class="phone"><div class="phone-screen"><div class="phone-slot"><strong>Shared calendar</strong>Authentic app screenshot to be added</div><span class="phone-label">03 / Calendar</span></div></div>
+   </div>
+  </div>
+  <p class="product-note wrap">Product imagery will use real EclipseBond screens. No illustrative interface mockups are used.</p>
+ </section>
+ <section class="about" id="about">
+  <div class="wrap">
+   <div class="about-top">
+    <div class="reveal"><div class="section-index">03</div><div class="eyebrow" style="margin-top:28px;color:#827666">Our approach</div><h2>One company.<br>Many possibilities.</h2></div>
+    <p class="about-lede reveal delay-1">Venus Digital creates a growing portfolio of distinctive digital products, each free to develop its own identity, audience, and visual language.</p>
+   </div>
+   <div class="principles">
+    <article class="principle reveal"><div class="principle-mark" aria-hidden="true">◉</div><h3>Purposeful by design</h3><p>Built around real human needs and the moments that matter.</p></article>
+    <article class="principle reveal delay-1"><div class="principle-mark" aria-hidden="true">◇</div><h3>Independent identities</h3><p>Each product has the freedom to express its own character.</p></article>
+    <article class="principle reveal delay-2"><div class="principle-mark" aria-hidden="true">✳</div><h3>Considered execution</h3><p>Care in the details, from first idea to finished experience.</p></article>
+   </div>
+  </div>
+ </section>
+ <section class="contact" id="contact">
+  <div class="wrap contact-grid">
+   <div class="reveal"><div class="section-index">04</div><div class="eyebrow">Get in touch</div><h2>Good ideas<br>start somewhere.</h2></div>
+   <div class="reveal delay-1"><p class="contact-copy">For company, product, or business inquiries, Venus Digital LLC welcomes you. Our company email contact will be added here once established.</p><p class="contact-note">Venus Digital LLC · Independent digital product company</p></div>
+  </div>
+ </section>
+</main>
+<footer>
+ <div class="wrap footer-inner">
+  <div class="footer-brand">Venus Digital LLC</div>
+  <div>© <span id="year">2026</span> Venus Digital LLC. All rights reserved.</div>
+  <nav class="footer-links" aria-label="Footer navigation"><a href="../">Privacy policy</a><a href="#top">Back to top ↑</a></nav>
+ </div>
+</footer>
+<script>
+(function(){
+ const header=document.getElementById('site-header');
+ const hero=document.getElementById('hero-inner');
+ const headline=document.getElementById('hero-title');
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+ const compactAt=24;
+ let ticking=false;
+ function updateScroll(){
+  const y=window.scrollY||0;
+  header.classList.toggle('is-compact',y>compactAt);
+  if(!reduced.matches){
+   const distance=Math.min(y,window.innerHeight*.72);
+   const progress=distance/(window.innerHeight*.72||1);
+   hero.style.setProperty('--hero-shift',(-progress*58)+'px');
+   headline.style.setProperty('--headline-scale',(1-progress*.22).toFixed(3));
+   hero.style.opacity=(1-progress*.16).toFixed(3);
+  }else{
+   hero.style.removeProperty('--hero-shift');
+   headline.style.removeProperty('--headline-scale');
+   hero.style.opacity='1';
+  }
+  ticking=false;
+ }
+ window.addEventListener('scroll',function(){if(!ticking){window.requestAnimationFrame(updateScroll);ticking=true;}},{passive:true});
+ window.addEventListener('resize',updateScroll,{passive:true});
+ reduced.addEventListener?.('change',updateScroll);
+ updateScroll();
+ const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();
+ const items=document.querySelectorAll('.reveal');
+ if('IntersectionObserver' in window && !reduced.matches){
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:.14,rootMargin:'0px 0px -30px 0px'});
+  items.forEach(item=>observer.observe(item));
+ }else{items.forEach(item=>item.classList.add('is-visible'));}
+})();
+</script>
+</body>
+</html>
